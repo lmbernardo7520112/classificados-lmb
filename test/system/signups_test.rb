@@ -1,6 +1,8 @@
 require "application_system_test_case"
 require 'selenium-webdriver'
 
+
+
 class SignupsTest < ApplicationSystemTestCase
   test "usuario faz cadastro com dados válidos" do
     visit "/"
@@ -15,4 +17,12 @@ class SignupsTest < ApplicationSystemTestCase
 
     assert_text "Cadastro realizado com sucesso!"
   end
+
+  test "Cadastro com dados inválidos" do
+    visit "/"
+    click_on "Cadastre-se"
+    click_on "Cadastrar"
+
+    
+    assert_text "Erro ao salvar"
 end
