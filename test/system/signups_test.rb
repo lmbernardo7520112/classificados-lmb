@@ -25,4 +25,5 @@ class SignupsTest < ApplicationSystemTestCase
 
     
     assert_text "Erro ao salvar"
+  end
 end
