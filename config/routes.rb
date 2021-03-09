@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   #get "/users", to: #users#index
   #get "/users/:id", to: "users#show"
 
-
+  resources :ads, only: [:new, :create]
   #Login
   resources :sessions, only: [:new, :create] do 
     collection do
