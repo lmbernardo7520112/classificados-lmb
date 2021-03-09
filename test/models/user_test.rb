@@ -32,9 +32,9 @@ test "email é obrigatório e formato válido" do
   user.save
   assert user.errors[:email].any?
 
-  #user = User.new(email: "valido@exemplo.com")
-  #user.save
-  #refute user.errors[:email].any?
+  user = User.new(email: "valido@exemplo.com")
+  user.save
+  refute user.errors[:email].any?
 end
 
     test "email é unico" do 

@@ -17,7 +17,12 @@
   </p>
   
   <nav>
-    <%= link_to translate("menu.signup"), "/users/new" %>
+    <% if user_signed_in? %>
+    jhfjgfjfjg
+    <% else %>
+      <%= link_to translate("menu.signup"), new_user_path %>
+      <%= link_to translate("menu.signin"), new_session_path %>
+    <% end %>
   </nav>
     <%= yield %>
   </body>
