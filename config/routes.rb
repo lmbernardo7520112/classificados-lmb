@@ -15,9 +15,9 @@ Rails.application.routes.draw do
 
 
   #Login
-  resources :sessions, only: [:new, :create]
-  #get "sessions/new", to: "sessions#new"
-
-  
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :sessions, only: [:new, :create] do 
+    collection do
+      delete "sign_out", to: "sessions#destroy", as: "sign_out"
+    end
+  end
 end

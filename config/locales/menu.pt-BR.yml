@@ -2,3 +2,4 @@ pt-BR:
   menu:
     signup: "Cadastrar"
     signin: "Entrar"
+    logout: "Sair"

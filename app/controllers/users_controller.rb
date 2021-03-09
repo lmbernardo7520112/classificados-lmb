@@ -5,10 +5,10 @@ class UsersController < ApplicationController
     end
 
     def create
-        
         @user = User.new(user_params)
         if @user.save
-        redirect_to "/sessions/new", notice: t(".success")
+            NotificationMailer.welcome(@user.name, @user.email).deliver_later
+            redirect_to "/sessions/new", notice: t(".success")
         else
             render :new
         end
